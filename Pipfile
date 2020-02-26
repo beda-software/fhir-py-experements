@@ -9,6 +9,7 @@ verify_ssl = true
 fhirpy = "*"
 isodate = "*"
 black = "*"
+mypy = "*"
 
 [requires]
 python_version = "3.7"

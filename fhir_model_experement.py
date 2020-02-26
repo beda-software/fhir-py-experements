@@ -2,6 +2,7 @@ import asyncio
 from fhirpy import AsyncFHIRClient
 from fhirpy.lib import AsyncFHIRResource
 from model.fhirelementfactory import FHIRElementFactory
+from model.patient import Patient
 
 
 async def update(self, server=None):
@@ -28,10 +29,10 @@ async def main():
     client = AsyncFHIRClient("http://test.fhir.org/r4", authorization="Bearer TOKEN",)
     client.resource_class = fhir_model_adapter
 
-    p = client.resource("Patient")
+    p: Patient = client.resource("Patient")
     print(p)
     await p.create()
-    print(p)
+    print(p.name)
 
 
 if __name__ == "__main__":
